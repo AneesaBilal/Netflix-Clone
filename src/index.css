@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StreamFlix design tokens - dark theme is the default */
+:root,
+:root.dark {
+  --sf-background: #09090b;
+  --sf-surface: #141416;
+  --sf-surface-hover: #1d1d20;
+  --sf-surface-2: #0f0f11;
+  --sf-accent-tint: rgba(229, 9, 20, 0.12);
+  --sf-primary: #e50914;
+  --sf-primary-hover: #f6121d;
+  --sf-text-primary: #ffffff;
+  --sf-text-secondary: #b3b3b3;
+  --sf-border: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
+}
+
+/* Soft cinematic light theme - never pure white */
+:root.light {
+  --sf-background: #f4f7fb;
+  --sf-surface: #ffffff;
+  --sf-surface-hover: #eef2f7;
+  --sf-surface-2: #eef0ff;
+  --sf-accent-tint: #eef0ff;
+  --sf-primary: #e50914;
+  --sf-primary-hover: #f6121d;
+  --sf-text-primary: #17181c;
+  --sf-text-secondary: #667085;
+  --sf-border: rgba(23, 24, 28, 0.1);
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--sf-background);
+  color: var(--sf-text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: var(--sf-border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sf-surface-hover);
+  border-radius: 8px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-shadow-hero {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+input[type='range'] {
+  accent-color: var(--sf-primary);
+}
